@@ -722,10 +722,10 @@ namespace SungmaHeeTower
 		if (!pkMonster)
 			return;
 
-		if (pkItem)
-			ITEM_MANAGER::instance().RemoveItem(pkItem);
+		int itemVnum = pkItem->GetVnum();
+		ITEM_MANAGER::instance().RemoveItem(pkItem);
 
-		if (pkItem->GetVnum() == KEY_LEVEL1_SUNGMAHEE && GetDungeonStep() == 1)
+		if (itemVnum == KEY_LEVEL1_SUNGMAHEE && GetDungeonStep() == 1)
 		{	
 			if (GetSeal1())
 			{
